@@ -28,7 +28,7 @@ form?.addEventListener("submit",e=>{
     }
     
     task.push(newTask);
-
+    saveTask();
 
     addListItem(newTask)
     input.value="";
@@ -55,5 +55,10 @@ function addListItem(task:Task){
 
 
 function saveTask(){
-    localStorage.setItem("Tasks")
+    localStorage.setItem("Tasks",JSON.stringify(task));
 }
+
+function loadTask(){
+    localStorage.getItem("Tasks")
+}
+
