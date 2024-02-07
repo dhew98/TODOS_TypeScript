@@ -58,7 +58,9 @@ function saveTask(){
     localStorage.setItem("Tasks",JSON.stringify(task));
 }
 
-function loadTask(){
-    localStorage.getItem("Tasks")
+function loadTask():Task[]{
+    const taskJSON=localStorage.getItem("Tasks")
+    if(taskJSON==null) return []
+    return  JSON.parse(taskJSON);
 }
 
