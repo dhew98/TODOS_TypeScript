@@ -1,5 +1,8 @@
 import {v4 as uuidV4} from "uuid"
 
+
+
+
 type Task={
     id:string,
     title:string,
@@ -13,7 +16,10 @@ const form = document.querySelector<HTMLFormElement>("#new-task-form")
 const input = document.querySelector<HTMLInputElement>("#new-task-title")
 
 
-const task:Task[]=[];
+const task:Task[]=loadTask();
+task.forEach(addListItem);
+
+
 
 form?.addEventListener("submit",e=>{
     e.preventDefault();
